@@ -130,11 +130,12 @@ namespace Lab3
         private void lbParticipants_Click(object sender, EventArgs e)
         {
             PrivateChat privateChat = new PrivateChat();
-            privateChat.Show();
+            privateChat.Show();    
         }
 
         static void BroadcastData(string data, Socket senderSocket)
         {
+            List<Socket> clientSockets = new List<Socket>();
             // Lặp qua danh sách các client đã kết nối tới server và gửi dữ liệu đến từng client
             foreach (Socket clientSocket in clientSockets)
             {
